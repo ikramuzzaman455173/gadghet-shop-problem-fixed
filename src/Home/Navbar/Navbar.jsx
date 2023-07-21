@@ -1,16 +1,16 @@
 // import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AuthContext } from "../../authprovider/AuthProvider";
 import image from '../../assets/shop-logo.webp'
 import shop from '../../assets/shop.webp'
 import users from '../../assets/user.webp'
 import cart from '../../assets/cart.webp'
 import gift from '../../assets/gift.webp'
+import { AuthContext } from "../../AuthProvider/Authprovider";
 
 
 const Navbar = ({ toggleTheme }) => {
-  const { user, logOut } = useContext(AuthContext)
+  const { user,logOut } = useContext(AuthContext) || { user: null };
   const [showLogout, setShowLogout] = useState(false);
   // const [course] = useCourses()
 
